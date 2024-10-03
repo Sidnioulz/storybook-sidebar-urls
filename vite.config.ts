@@ -39,7 +39,7 @@ function StorybookUrlLinksPlugin(): Plugin {
 
         return {
           code: `
-            import RedirectBack from '../.storybook/RedirectBack.svelte';
+            import RedirectBack from '../../.storybook/components/RedirectBack.svelte';
             ${namedExports
               .map(
                 (name) =>
@@ -55,9 +55,8 @@ function StorybookUrlLinksPlugin(): Plugin {
   };
 }
 
+// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [svelte()],
-  test: {
-    include: ['src/**/*.{test,spec}.{js,ts}'],
-  },
-});
+  plugins: [StorybookUrlLinksPlugin(), svelte()],
+})
+
