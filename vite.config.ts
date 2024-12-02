@@ -43,7 +43,7 @@ function StorybookUrlLinksPlugin(): Plugin {
             ${namedExports
               .map(
                 (name) =>
-                  `export const ${name} = () => new RedirectBack({ target: 'storybook-root'});`
+                  `export const ${name} = () => new RedirectBack();`
               )
               .join('\n')}
             ${defaultExport}
